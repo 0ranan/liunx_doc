@@ -14,6 +14,32 @@ git branch -m master main
 
 # -m master main ：将本地的 master 分支重命名为 main
 ```
+## 远程分支管理
+
+```bash
+# 查看本地分支
+git branch
+
+# 查看远程分支
+git branch -r
+
+# 查看远程仓库信息
+git remote -v
+
+# 添加远程仓库
+git remote add origin git@gitcode.com:anran0/liunx_doc.git
+
+```
+
+
+
+## 建立分支关联
+
+```bash
+git branch --set-upstream-to=origin/main main
+
+# --set-upstream-to=origin/main main ：将本地的 main 分支与远程的 main 分支关联起来
+```
 
 ## 术语速查
 
@@ -29,4 +55,5 @@ push(推送)
 pull(拉取)
 > 拉取是将远程仓库的提交下载到本地分支,可以更新本地代码和版本
 
-
+remote(远程仓库)
+> 远程仓库是一个存储代码的服务器,可以用来分享代码和协作开发
