@@ -1,0 +1,45 @@
+# 编译生成的文件
+*.o
+*.a
+*.so
+*.dylib
+*.exe
+*.out
+
+# 可执行文件
+myproc1
+
+# 操作系统生成的文件
+.DS_Store
+Thumbs.db
+
+# IDE 和编辑器生成的文件
+.idea/
+.vscode/*
+!.vscode/settings.json
+*.swp
+*.swo
+*~
+
+# 系统日志和临时文件
+*.log
+*.tmp
+*.temp
+
+# 开发环境配置
+# .devcontainer/
+
+# 依赖管理文件
+node_modules/
+venv/
+pip-selfcheck.json
+
+# 包管理文件
+*.zip
+*.tar.gz
+*.rar
+
+# 构建输出目录
+build/
+dist/
+out/

@@ -1,0 +1,67 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/cpp
+{
+	"name": "Ubuntu C++ Development Environment",
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+	
+	// 工作目录设置
+	"workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
+	"workspaceFolder": "/workspace",
+	
+	// 运行参数 - 添加调试所需的特权
+	"runArgs": [
+		"--cap-add=SYS_PTRACE",
+		"--security-opt", "seccomp=unconfined"
+	],
+	
+	// 推荐安装的 VS Code 扩展
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				// C++ 相关扩展
+				"ms-vscode.cpptools",
+				"ms-vscode.cpptools-extension-pack",
+				"ms-vscode.cpptools-themes",
+				
+				// 代码质量和格式化
+				"xaver.clang-format",
+				"notskm.clang-tidy",
+				"danielpinto8zz6.c-cpp-compile-run",
+				
+				// 版本控制
+				"eamodio.gitlens",
+				"GitHub.vscode-pull-request-github",
+				
+				// 其他实用工具
+				"ms-vscode.makefile-tools",
+				"twxs.cmake",
+				"gruntfuggly.todo-tree",
+				"streetsidesoftware.code-spell-checker"
+			],
+			
+			// VS Code 设置
+			"settings": {
+				"C_Cpp.default.compilerPath": "/usr/bin/gcc",
+				"C_Cpp.default.cppStandard": "c++17",
+				"C_Cpp.default.cStandard": "c11",
+				"C_Cpp.formatting": "clangFormat",
+				"clang-format.executable": "/usr/bin/clang-format",
+				"cmake.configureOnOpen": true,
+				"editor.formatOnSave": true,
+				"editor.tabSize": 4,
+				"editor.insertSpaces": true
+			}
+		}
+	},
+	
+	// 容器创建后执行的命令
+	"postCreateCommand": "echo 'Welcome to Ubuntu C++ Development Environment!' && cmake --version && gcc --version && g++ --version",
+	
+	// 容器启动后执行的命令
+	"postStartCommand": "echo 'Development container is ready for use!'",
+	
+	// 连接类型
+	"remoteUser": "vscode"
+}
